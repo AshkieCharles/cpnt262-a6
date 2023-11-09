@@ -1,4 +1,7 @@
-<script>
+<script type="module">
+  import Title from "../lib/components/Title.svelte";
+  import Event from "../lib/components/Event.svelte";
+  let showEvent = false
   let esportsPlayers = [
     {name: 'Faker', team: "T1"},
     {name: 'Beryl', team: "DRX"},
@@ -15,14 +18,20 @@
 
 <label for="name">Name: </label>
 <input type="text" id="name" placeholder="Name" bind:value={newName}>
-<label for="team"></label>
+<label for="team">Team Name: </label>
 <input type="text" id="team" placeholder="Team Name" bind:value={teamName}>
-<input type="button" value="">
+<button on:click={newPlayerTeam}>Add New Player</button>
 
+
+<Title />
+  <button on:click={() => (showEvent = true)}>Show Event</button>
+  {#if showEvent}
+    <Event on:close={() => (showEvent = false)} />  
+  {/if}
 
   {#each esportsPlayers as {name, team} }
     <p>
       {name} is a player for {team} that is competing for the World Cup for League of Legends
     </p>
   {/each}
-  
+

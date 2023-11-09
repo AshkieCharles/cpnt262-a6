@@ -17,7 +17,7 @@
 <input type="text" id="name" placeholder="Name" bind:value={newName}>
 <label for="team"></label>
 <input type="text" id="team" placeholder="Team Name" bind:value={teamName}>
-<button on:click={newPlayerTeam} type="button"></button>
+<input type="button" value="">
 
 
   {#each esportsPlayers as {name, team} }

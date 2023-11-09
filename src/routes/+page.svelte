@@ -1,6 +1,7 @@
 <script type="module">
   import Title from "../lib/components/Title.svelte";
   import Event from "../lib/components/Event.svelte";
+  import "../main.css"
   let showEvent = false
   let esportsPlayers = [
     {name: 'Faker', team: "T1"},
@@ -13,7 +14,11 @@
   function newPlayerTeam(event) {
     esportsPlayers = [...esportsPlayers,{name:newName, team:teamName}]
   } 
+  function colorChange(event) {
+    document.getElementById("btn").style.backgroundColor = "blue";
+  }
 
+  
 </script>
 
 <label for="name">Name: </label>
@@ -35,3 +40,5 @@
     </p>
   {/each}
 
+
+<button on:click={colorChange} id="btn">Change color</button>

@@ -1,6 +1,7 @@
 <script type="module">
   import Title from "../lib/components/Title.svelte";
   import Event from "../lib/components/Event.svelte";
+  import Carousel from '../lib/components/Players.svelte';
   import "../main.css"
   let showEvent = false
   let esportsPlayers = [
@@ -20,12 +21,14 @@
 
   
 </script>
-<Title />
-<button on:click={() => (showEvent = true)}>Show Event</button>
+<button on:click={() => (showEvent = true)}>What is this list for?</button>
 {#if showEvent}
   <Event on:close={() => (showEvent = false)} />  
 {/if}
 <slot />
+<Carousel />
+
+
 
 
 <label for="name">Name: </label>
@@ -45,3 +48,5 @@
 
 
 <button on:click={colorChange} id="btn">Change color</button>
+
+

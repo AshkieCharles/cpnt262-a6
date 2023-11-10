@@ -9,7 +9,7 @@
 
 <div>
   <h2>
-    Hello There
+    Greatest League players the world has to offer.
   </h2>
   <button on:click={() => eventDispatch('close')}>Close</button>
 </div>
@@ -19,7 +19,7 @@
     margin-top: 2rem;
   }
   h2 {
-    max-width: 11ch;
+    max-width: 45%;
     display: flex;
     background-color: rgb(0, 0, 0);
     margin: auto;

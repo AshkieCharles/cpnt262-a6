@@ -1,8 +1,8 @@
 <script>
 	import Button from '../components/Btn.svelte';
 	// slide array to loop through
-  // The reason why there is an empty string is because we want to show that the first player is #1 in teh world
-	const worldPlayers = ['','Faker', 'Deft', 'Smeb', 'Rekkles', 'Uzi', 'Perkz', 'Deft', 'Beryl', "DoubleLift", "Bengi", "ShowMaker"];
+  // The reason why there is an empty string is because we want to show that the first player is #1 in the world and an empty string at the end to render the last person on the list instead of skipping it.
+	const worldPlayers = ['','Faker', 'Deft', 'Smeb', 'Rekkles', 'Uzi', 'Perkz', 'Deft', 'Beryl', "DoubleLift", "Bengi", "ShowMaker", ''];
 
 	// We start on 1
 	let playerListIndex = 1;
@@ -41,8 +41,8 @@
 	<h2 class="title">{playerListIndex}: {currentSlideContent}</h2>
 	<div>
     <div class="btn"> 
-      <Button  text="Next Player" on:toggle={nextSlide} />
       <Button  text="Previous Player" on:toggle={previousPlayer} />
+      <Button  text="Next Player" on:toggle={nextSlide} />
     </div>
 	</div>
 </section>

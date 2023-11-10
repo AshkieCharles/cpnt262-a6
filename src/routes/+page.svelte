@@ -20,6 +20,13 @@
 
   
 </script>
+<Title />
+<button on:click={() => (showEvent = true)}>Show Event</button>
+{#if showEvent}
+  <Event on:close={() => (showEvent = false)} />  
+{/if}
+<slot />
+
 
 <label for="name">Name: </label>
 <input type="text" id="name" placeholder="Name" bind:value={newName}>
@@ -29,10 +36,6 @@
 
 
 <Title />
-  <button on:click={() => (showEvent = true)}>Show Event</button>
-  {#if showEvent}
-    <Event on:close={() => (showEvent = false)} />  
-  {/if}
 
   {#each esportsPlayers as {name, team} }
     <p>

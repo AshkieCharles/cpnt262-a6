@@ -1,6 +1,5 @@
 <script type="module">
   import Title from "../lib/components/Title.svelte";
-  import Event from "../lib/components/Event.svelte";
   import Players from '../lib/components/Players.svelte';
   import "../main.css"
   let showEvent = false
@@ -15,18 +14,23 @@
   function newPlayerTeam(event) {
     esportsPlayers = [...esportsPlayers,{name:newName, team:teamName}]
   } 
-  function colorChange(event) {
-    document.getElementById("btn").style.backgroundColor = "blue";
+  function darkMode(event) {
+    document.getElementById("inside").style.backgroundColor = "black";
+    document.getElementById("inside").style.color = "white";
   }
+
+  function lightMode(event) {
+    document.getElementById("inside").style.backgroundColor = "white";
+    document.getElementById("inside").style.color = "black";
+  }
+
 
   
 </script>
-<button class="event" on:click={() => (showEvent = true)}>What is this list for?</button>
-{#if showEvent}
-  <Event on:close={() => (showEvent = false)} />  
-{/if}
-<slot />
+<main id="inside">
+
 <Players />
+
 
 
 
@@ -47,6 +51,13 @@
   {/each}
 
 
-<button on:click={colorChange} id="btn">Change color</button>
+<button on:click={darkMode}>Dark Mode</button>
+<button on:click={lightMode}>Light Mode</button>
+</main>
 
-
+<style>
+  #inside {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+</style>

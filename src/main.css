@@ -1,3 +1,5 @@
-button {
-  display: block;
+.event {
+  display: flex;
+  margin: auto;
+  text-align: center;
 }

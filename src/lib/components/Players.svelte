@@ -11,11 +11,11 @@
 	let currentSlideContent = worldPlayers[1];
 
 	// We go back 2 of the length to go past the 0 index
-	const maxLength = worldPlayers.length - 2;
+	const maxPlayerList = worldPlayers.length - 2;
 
 	// next function
 	function nextSlide() {
-		if (playerListIndex === maxLength) {
+		if (playerListIndex === maxPlayerList) {
 			playerListIndex = 1;
 			currentSlideContent = worldPlayers[playerListIndex];
 		} else {
@@ -25,9 +25,9 @@
 	}
 
 	// previous function
-	function prevSlide() {
+	function previousPlayer() {
 		if (playerListIndex === 1) {
-			playerListIndex = maxLength;
+			playerListIndex = maxPlayerList;
 			currentSlideContent = worldPlayers[playerListIndex];
 		} else {
 			playerListIndex--;
@@ -42,7 +42,7 @@
 	<div>
     <div class="btn"> 
       <Button  text="Next Player" on:toggle={nextSlide} />
-      <Button  text="Previous Player" on:toggle={prevSlide} />
+      <Button  text="Previous Player" on:toggle={previousPlayer} />
     </div>
 	</div>
 </section>

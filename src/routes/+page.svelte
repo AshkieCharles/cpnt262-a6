@@ -2,6 +2,7 @@
   import Title from "../lib/components/Title.svelte";
   import Players from '../lib/components/Players.svelte';
   import "../main.css"
+ 
   let showEvent = false
   let esportsPlayers = [
     {name: 'Faker', team: "T1"},
@@ -14,18 +15,17 @@
   function newPlayerTeam(event) {
     esportsPlayers = [...esportsPlayers,{name:newName, team:teamName}]
   } 
+  function lightMode(event) {
+    document.getElementById("inside").style.backgroundColor = "white";
+    document.getElementById("inside").style.color = "black";
+  }
   function darkMode(event) {
     document.getElementById("inside").style.backgroundColor = "black";
     document.getElementById("inside").style.color = "white";
   }
 
-  function lightMode(event) {
-    document.getElementById("inside").style.backgroundColor = "white";
-    document.getElementById("inside").style.color = "black";
-  }
-
-
   
+
 </script>
 <main id="inside">
 
@@ -33,10 +33,8 @@
 
 
 
-
-
 <label for="name">Name: </label>
-<input type="text" id="name" placeholder="Name" bind:value={newName}>
+<input type="text" id="name" placeholder="Name" bind:value={newName} onmouseover="">
 <label for="team">Team Name: </label>
 <input type="text" id="team" placeholder="Team Name" bind:value={teamName}>
 <button on:click={newPlayerTeam}>Add New Player</button>
@@ -51,7 +49,7 @@
   {/each}
 
 
-<button on:click={darkMode}>Dark Mode</button>
-<button on:click={lightMode}>Light Mode</button>
+<button on:click={() => darkMode()}>Dark Mode</button>
+<button on:click={() => lightMode()} >Light Mode</button>
 </main>
 

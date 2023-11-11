@@ -4,6 +4,8 @@
   // The reason why there is an empty string is because we want to show that the first player is #1 in the world and an empty string at the end to render the last person on the list instead of skipping it.
 	const worldPlayers = ['','Faker', 'Deft', 'Smeb', 'Rekkles', 'Uzi', 'Perkz', 'Deft', 'Beryl', "DoubleLift", "Bengi", "ShowMaker", ''];
 
+
+	
 	// We start on 1
 	let playerListIndex = 1;
 
@@ -34,10 +36,12 @@
 			currentSlideContent = worldPlayers[playerListIndex];
 		}
 	}
+
+export let titleWorld = 'Top players for League of Legends'
 </script>
 
 <section>
-  <h2 class="title"> Top players for League of Legends</h2>
+  <h2 class="title">{titleWorld}</h2>
 	<h2 class="title">{playerListIndex}: {currentSlideContent}</h2>
 	<div>
     <div class="btn"> 

@@ -2,7 +2,7 @@
 	import Button from '../components/Btn.svelte';
 	// slide array to loop through
   // The reason why there is an empty string is because we want to show that the first player is #1 in the world and an empty string at the end to render the last person on the list instead of skipping it.
-	const worldPlayers = ['','Faker', 'Deft', 'Smeb', 'Rekkles', 'Uzi', 'Perkz', 'Deft', 'Beryl', "DoubleLift", "Bengi", "ShowMaker", ''];
+	const worldPlayers = ['','Faker', 'Deft', 'Smeb', 'Rekkles', 'Uzi', 'Perkz', 'Deft', 'Beryl', "DoubleLift", "Bengi", ''];
 
 
 	
@@ -37,7 +37,7 @@
 		}
 	}
 
-export let titleWorld = 'Top players for League of Legends'
+export let titleWorld = 'Top 10 players for League of Legends'
 </script>
 
 <section>

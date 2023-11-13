@@ -16,7 +16,7 @@
 	const maxPlayerList = worldPlayers.length - 2;
 
 	// next function
-	function nextSlide() {
+	function nextPlayer() {
 		if (playerListIndex === maxPlayerList) {
 			playerListIndex = 1;
 			currentSlideContent = worldPlayers[playerListIndex];
@@ -46,7 +46,7 @@ export let titleWorld = 'Top 10 players for League of Legends'
 	<div>
     <div class="btn"> 
       <Button  text="Previous Player" on:toggle={previousPlayer} />
-      <Button  text="Next Player" on:toggle={nextSlide} />
+      <Button  text="Next Player" on:toggle={nextPlayer} />
     </div>
 	</div>
 </section>

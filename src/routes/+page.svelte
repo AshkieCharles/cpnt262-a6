@@ -24,7 +24,7 @@
     document.getElementById("inside").style.color = "white";
   }
 
-  
+
 
 </script>
 <main id="inside">

@@ -34,7 +34,7 @@
 
 
 <label for="name">Name: </label>
-<input type="text" id="name" placeholder="Name" bind:value={newName} onmouseover="">
+<input type="text" id="name" placeholder="Name" bind:value={newName}>
 <label for="team">Team Name: </label>
 <input type="text" id="team" placeholder="Team Name" bind:value={teamName}>
 <button on:click={newPlayerTeam}>Add New Player</button>

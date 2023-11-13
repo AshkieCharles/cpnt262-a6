@@ -6,7 +6,7 @@
 
 
 	
-	// We start on 1
+	// We start on the greatest player.
 	let playerListIndex = 1;
 
 	// The current players that are being shown to the user.
